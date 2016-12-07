@@ -48,6 +48,7 @@ public class AdaptadorNota extends RecyclerView.Adapter<AdaptadorNota.NotaViewHo
             }
             if(cursor.getString(cursor.getColumnIndex(ContratoBaseDatos.TablaNota.IMAGEN))!=null && cursor.getString(cursor.getColumnIndex(ContratoBaseDatos.TablaNota.IMAGEN)).trim().compareTo("")!=0 ){
                 holder.iView.setImageResource(R.drawable.ic_action_imagen_card);
+
             }
         }
 
