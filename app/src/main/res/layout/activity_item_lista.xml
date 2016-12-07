@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/tituloLista"
+            android:hint="Titulo de lista"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:text="Nuevo item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nuevoItemButton"
+        android:drawableLeft="@drawable/ic_action_name"
+        android:backgroundTint="@android:color/background_light" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        tools:listitem="@layout/lista_item"
+        android:id="@+id/recyclerViewLista"
+        android:layout_weight="1"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

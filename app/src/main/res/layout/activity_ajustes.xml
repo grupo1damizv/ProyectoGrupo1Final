@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="Fondos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical|center_horizontal"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="normal|bold" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="Fondo de nota"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/fondoNota"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:textSize="24sp"
+            android:gravity="center_vertical" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_up_float"
+                android:id="@+id/upNota"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/numeroColorNota"
+                android:textAlignment="center"
+                android:textStyle="normal|bold" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_down_float"
+                android:id="@+id/downNota"
+                android:layout_gravity="center_vertical|center_horizontal" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:layout_weight="1"
+            android:id="@+id/muestraNotas" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="Fondo de Lista"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/fondoLista"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:textSize="24sp"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_up_float"
+                android:id="@+id/upLista"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/numeroColorLista"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_down_float"
+                android:id="@+id/downLista"
+                android:layout_gravity="center_vertical|center_horizontal" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:layout_weight="1"
+            android:id="@+id/muestraListas" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:text="Fondo de papelera"
+            android:layout_width="wrap_content"
+            android:layout_height="72dp"
+            android:textSize="23sp"
+            android:textAlignment="center"
+            android:textStyle="normal|bold"
+            android:gravity="center_vertical|center_horizontal"
+            android:id="@+id/fondoPapelera"
+            android:layout_gravity="center_vertical" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_up_float"
+                android:id="@+id/upPapelera"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <TextView
+                android:text="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/numeroColorPapelera"
+                android:layout_gravity="center_vertical|center_horizontal" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/arrow_down_float"
+                android:id="@+id/downPapelera"
+                android:layout_gravity="center_vertical|center_horizontal" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@android:color/background_light"
+            android:layout_weight="1"
+            android:id="@+id/muestraPapelera" />
+    </LinearLayout>
+</LinearLayout>

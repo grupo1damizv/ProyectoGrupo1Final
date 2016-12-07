@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.izv.dam.newquip">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/JAJ"
+        android:fullBackupContent="@xml/my_backup_rules">
+        <activity android:name="com.izv.dam.newquip.vistas.main.ActividadPrincipal"
+            android:label="@string/app_name">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.izv.dam.newquip.vistas.notas.VistaNota"
+            android:label="@string/nota"
+            android:parentActivityName=".vistas.main.ActividadPrincipal">
+        </activity>
+        <activity android:name="com.izv.dam.newquip.vistas.listas.VistaLista"
+            android:label="Lista"
+            android:parentActivityName=".vistas.main.ActividadPrincipal">
+        </activity>
+        <activity android:name="com.izv.dam.newquip.vistas.ajustes.VistaAjustes"
+            android:label="Ajustes"
+            android:parentActivityName=".vistas.main.ActividadPrincipal">
+        </activity>
+        <provider
+            android:name=".gestion.ProveedorNota"
+            android:authorities="com.izv.dam.newquip.gestion"
+            android:enabled="true"
+            android:exported="true"></provider>
+        <provider
+            android:name=".gestion.ProveedorBorrados"
+            android:authorities="com.izv.dam.newquip.gestion3"
+            android:enabled="true"
+            android:exported="true"></provider>
+        <provider
+            android:name=".gestion.ProveedorLista"
+            android:authorities="com.izv.dam.newquip.gestion1"
+            android:enabled="true"
+            android:exported="true"></provider>
+    </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+</manifest>
