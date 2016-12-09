@@ -45,9 +45,7 @@ public class VistaAjustes extends AppCompatActivity {
     private ImageView muestraLista;
     private ImageView muestraPapelera;
 
-    SharedPreferences prefs;
-    SharedPreferences.Editor editor;
-
+    private PresentadorAjustes presentador;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,15 +68,16 @@ public class VistaAjustes extends AppCompatActivity {
         muestraLista = (ImageView) findViewById(R.id.muestraListas);
         muestraPapelera = (ImageView) findViewById(R.id.muestraPapelera);
 
-        prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
-        numNota.setText(String.valueOf(prefs.getInt("colorNota",0)));
+        presentador=new PresentadorAjustes(this);
+
+        numNota.setText(String.valueOf(presentador.getColorNota()));
         actualizaColorNota();
-        numLista.setText(String.valueOf(prefs.getInt("colorLista",0)));
+        numLista.setText(String.valueOf(presentador.getColorLista()));
         actualizaColorLista();
-        numPapelera.setText(String.valueOf(prefs.getInt("colorPapelera",0)));
+        numPapelera.setText(String.valueOf(presentador.getColorPapelera()));
         actualizaColorPapelera();
 
-        editor = prefs.edit();
+
 
         upNota.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,7 +146,7 @@ public class VistaAjustes extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.guardar) {
-            saveAjustes();
+            presentador.saveAjustes(numNota.getText().toString(),numLista.getText().toString(),numPapelera.getText().toString());
             Intent upIntent = NavUtils.getParentActivityIntent(this);
             if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
                 // This activity is NOT part of this app's task, so create a new task
@@ -168,12 +167,6 @@ public class VistaAjustes extends AppCompatActivity {
         return false;
     }
 
-    void saveAjustes() {
-        editor.putInt("colorNota",Integer.parseInt(numNota.getText().toString()));
-        editor.putInt("colorLista",Integer.parseInt(numLista.getText().toString()));
-        editor.putInt("colorPapelera",Integer.parseInt(numPapelera.getText().toString()));
-        editor.commit();
-    }
 
     int incrementar(int valorActual) {
         int valor = valorActual + 1;
