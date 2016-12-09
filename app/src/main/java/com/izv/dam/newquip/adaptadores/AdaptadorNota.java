@@ -58,6 +58,7 @@ public class AdaptadorNota extends RecyclerView.Adapter<AdaptadorNota.NotaViewHo
 
     public Cursor getItem(int position) {
         if (dataCursor != null) {
+            dataCursor.moveToFirst();
             dataCursor.moveToPosition(position);
             return dataCursor;
         } else {

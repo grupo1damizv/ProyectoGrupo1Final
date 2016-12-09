@@ -171,10 +171,8 @@ public class ActividadPrincipal extends AppCompatActivity implements
             @Override
             public void onPageSelected(int position) {
                  pagina=position;
-                //actualizaColores();
                 if (position == 0) {
                     getSupportLoaderManager().restartLoader(1, null, ActividadPrincipal.this);
-
                 } else if (position == 1) {
                     getSupportLoaderManager().restartLoader(2, null, ActividadPrincipal.this);
                 } else if (position == 2) {
@@ -189,9 +187,8 @@ public class ActividadPrincipal extends AppCompatActivity implements
             public void onPageScrollStateChanged(int state) {
             }
         });
-        actualizaCursores();
         this.pager.setAdapter(adapter);
-
+        actualizaCursores();
 
 
     }
@@ -422,13 +419,10 @@ public class ActividadPrincipal extends AppCompatActivity implements
     public void actualizaCursores() {
 
         if (pagina == 0) {
-            pagina = 0;
             getSupportLoaderManager().restartLoader(1, null, ActividadPrincipal.this);
         } else if (pagina == 1) {
-            pagina = 1;
             getSupportLoaderManager().restartLoader(2, null, ActividadPrincipal.this);
         } else if (pagina == 2) {
-            pagina = 2;
             getSupportLoaderManager().restartLoader(3, null, ActividadPrincipal.this);
         }
     }
