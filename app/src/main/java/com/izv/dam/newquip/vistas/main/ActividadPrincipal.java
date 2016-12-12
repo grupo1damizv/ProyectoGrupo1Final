@@ -7,6 +7,7 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.CursorJoiner;
 import android.graphics.Color;
@@ -96,6 +97,7 @@ public class ActividadPrincipal extends AppCompatActivity implements
     protected void onCreate(final Bundle arg0) {
         super.onCreate(arg0);
         this.setContentView(R.layout.main);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // Create an adapter with the fragments we show on the ViewPager
         adapter = new AdaptadorPaginaFragmento(getSupportFragmentManager());
